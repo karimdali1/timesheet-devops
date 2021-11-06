@@ -79,13 +79,17 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User retrieveUser(String id) {
+		User u = null;
+		try {
 		// TODO Log à ajouter en début de la méthode 
 		l.info("In method retrieveUser");
 		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
-		User u =  userRepository.findById(Long.parseLong(id)).get(); 
+		 u =  userRepository.findById(Long.parseLong(id)).get(); 
 		// TODO Log à ajouter à la fin de la méthode 
 		l.debug("connexion a la db ok");
-		l.info("out of methode retriveUser success");
+		l.info("out of methode retriveUser success");}catch (Exception e) {
+			l.error("error in retrieveuser() :"+e);
+		}
 		return u; 
 	}
 

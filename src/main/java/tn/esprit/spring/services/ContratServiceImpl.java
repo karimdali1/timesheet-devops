@@ -79,13 +79,16 @@ public class ContratServiceImpl implements IContratService {
 
 	@Override
 	public Contrat retrieveContrat(String id) {
+		Contrat u = null;
+		try {
 		// TODO Log à ajouter en début de la méthode 
 		l.info("In method retrieveContrat");
 		//Contrat u =  contratRepository.findById(Long.parseLong(id)).orElse(null);
-		Contrat u =  contratRepository.findById(Integer.parseInt(id)).get(); 
+	 u =  contratRepository.findById(Integer.parseInt(id)).get(); 
 		// TODO Log à ajouter à la fin de la méthode 
 		l.debug("connexion a la db ok");
-		l.info("out of methode retriveContrat success");
+		l.info("out of methode retriveContrat success");}catch (Exception e) {
+			l.error("error in retrievecontrat() :"+e);		}
 		return u; 
 	}
 
