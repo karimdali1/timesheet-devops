@@ -48,7 +48,7 @@ public class ContratServiceImplTest {
 		public void testupdateContrat() throws ParseException{
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			Contrat u = new Contrat(d, "cdi", 600);
+			Contrat u = new Contrat(1,d, "cdi", 60480);
 			Contrat ContratUpdated = us.updateContrat(u); 
 			Assertions.assertEquals(u.getSalaire(),ContratUpdated.getSalaire());
 			
@@ -56,10 +56,10 @@ public class ContratServiceImplTest {
 		
 		@Test
 		@Order(4)
-		public void testdeleteContrat(String id) {
+		public void testdeleteContrat() {
 			
-			us.deleteContrat("3");
-			Assertions.assertNull(us.retrieveContrat("3"));
+			us.deleteContrat("2");
+			Assertions.assertNull(us.retrieveContrat("2"));
 			
 		}
 		
@@ -70,6 +70,6 @@ public class ContratServiceImplTest {
 			
 			Contrat ContratRetrieved = us.retrieveContrat("1");
 			
-			Assertions.assertEquals(1L,ContratRetrieved.getReference()); 
+			Assertions.assertEquals(1,ContratRetrieved.getReference()); 
 		}
 }
