@@ -29,7 +29,7 @@ public class ContratServiceImplTest {
 		@Order(1)
 		public void testRetrieveAllContrats(){
 			List<Contrat> listContrats = us.retrieveAllContrats();
-			Assertions.assertEquals(1,listContrats.size());
+			Assertions.assertEquals(5,listContrats.size());
 		}
 		
 		@Test
@@ -58,8 +58,8 @@ public class ContratServiceImplTest {
 		@Order(4)
 		public void testdeleteContrat() {
 			
-			us.deleteContrat("2");
-			Assertions.assertNull(us.retrieveContrat("2"));
+			us.deleteContrat("3");
+			Assertions.assertNull(us.retrieveContrat("3"));
 			
 		}
 		
