@@ -51,7 +51,7 @@ public class ContratServiceImpl implements IContratService {
 		l.info("In method addContrat");
 		Contrat u_saved = contratRepository.save(u); 
 		// TODO Log à ajouter à la fin de la méthode 
-		l.debug("connexion a la db ok");
+		
 		l.info("out of methode addContrat success");
 		return u_saved; 
 	}
@@ -62,7 +62,7 @@ public class ContratServiceImpl implements IContratService {
 		l.info("In method updateContrat");
 		Contrat u_saved = contratRepository.save(u); 
 		// TODO Log à ajouter à la fin de la méthode 
-		l.debug("connexion a la db ok");
+		
 		l.info("out of methode updateContrat success");
 		return u_saved; 
 	}
@@ -73,7 +73,7 @@ public class ContratServiceImpl implements IContratService {
 		l.info("In method deleteContrat");
 		contratRepository.deleteById(Integer.parseInt(id)); 
 		// TODO Log à ajouter à la fin de la méthode 
-		l.debug("connexion a la db ok");
+		
 		l.info("out of methode deleteUser success");
 	}
 
@@ -86,7 +86,7 @@ public class ContratServiceImpl implements IContratService {
 		//Contrat u =  contratRepository.findById(Long.parseLong(id)).orElse(null);
 	 u =  contratRepository.findById(Integer.parseInt(id)).get(); 
 		// TODO Log à ajouter à la fin de la méthode 
-		l.debug("connexion a la db ok");
+	
 		l.info("out of methode retriveContrat success");}catch (Exception e) {
 			l.error("error in retrievecontrat() :"+e);		}
 		return u; 
